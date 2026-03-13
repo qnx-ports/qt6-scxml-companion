@@ -2,7 +2,7 @@
 # Maintainer: Felix Xing <fxing@qnx.com>
 pkgname=qt6-scxml
 pkgver=6.10.0
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="Static and runtime integration of SCXML models into Qt6 code"
 url="https://qt.io/"
 arch="all"
@@ -72,6 +72,7 @@ dev() {
     amove usr/lib/qt6/sbom
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 d3fbccd0f529dd008515d0a449a388fa5969f215a8583aa15e8a3115f3141888f3a3808da8131fe82301f71d7f6301f9d31297aacdc22c7659c9e606c9efbc2d  qtscxml-everywhere-src-6.10.0.tar.xz
 "
